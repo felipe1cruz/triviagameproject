@@ -1,24 +1,27 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
+import { MD5 } from 'crypto-js';
+import { connect } from 'react-redux';
+import { getRanking } from '../services/rankingStorage';
+import { setReset } from '../redux/actions';
 
-export default class Ranking extends React.Component {
+class Ranking extends React.Component {
+  state = {
+    rankingList: [],
+  }
+
+  componentDidMount() {
+    this.setState({ rankingList: getRanking() });
+  }
+
   onClick = () => {
-    const { history } = this.props;
+    const { history, reset } = this.props;
+    reset();
     history.push('/');
   };
 
-  playerRanking = () => {
-    const ranking = JSON.parse(localStorage.getItem('ranking'));
-    return (ranking.map((player) => (
-      <div key={ player.name }>
-        <p>{player.name}</p>
-        <p>{player.score}</p>
-        <img src={ player.picture } alt={ player.name } />
-      </div>
-    )));
-  }
-
   render() {
+    const { rankingList } = this.state;
     return (
       <>
         <h1 data-testid="ranking-title">Ranking</h1>
@@ -29,16 +32,27 @@ export default class Ranking extends React.Component {
         >
           Voltar ao Início
         </button>
-        {this.playerRanking}
+        {rankingList && rankingList.map((player, index) => (
+          <div key={ index }>
+            <p data-testid={ `player-name-${index}` }>{player.name}</p>
+            <p data-testid={ `player-score-${index}` }>{player.score}</p>
+            <img src={ `https://www.gravatar.com/avatar/${MD5(player.picture).toString()}` } alt={ player.name } />
+          </div>
+        ))}
       </>
     );
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  reset: () => dispatch(setReset()),
+});
+
+export default connect(null, mapDispatchToProps)(Ranking);
+
 Ranking.propTypes = {
-  // assertions: PropTypes.number.isRequired,
-  // score: PropTypes.number.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+  reset: PropTypes.func.isRequired,
 };
