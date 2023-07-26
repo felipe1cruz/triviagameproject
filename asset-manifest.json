@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/triviagameproject/static/css/main.e28f0003.chunk.css",
+    "main.js": "/triviagameproject/static/js/main.acd583d7.chunk.js",
+    "main.js.map": "/triviagameproject/static/js/main.acd583d7.chunk.js.map",
+    "runtime-main.js": "/triviagameproject/static/js/runtime-main.38430777.js",
+    "runtime-main.js.map": "/triviagameproject/static/js/runtime-main.38430777.js.map",
+    "static/js/2.ed93f78b.chunk.js": "/triviagameproject/static/js/2.ed93f78b.chunk.js",
+    "static/js/2.ed93f78b.chunk.js.map": "/triviagameproject/static/js/2.ed93f78b.chunk.js.map",
+    "index.html": "/triviagameproject/index.html",
+    "precache-manifest.9973870276b00f21c143b76caee951ac.js": "/triviagameproject/precache-manifest.9973870276b00f21c143b76caee951ac.js",
+    "service-worker.js": "/triviagameproject/service-worker.js",
+    "static/css/main.e28f0003.chunk.css.map": "/triviagameproject/static/css/main.e28f0003.chunk.css.map",
+    "static/js/2.ed93f78b.chunk.js.LICENSE.txt": "/triviagameproject/static/js/2.ed93f78b.chunk.js.LICENSE.txt",
+    "static/js/main.acd583d7.chunk.js.LICENSE.txt": "/triviagameproject/static/js/main.acd583d7.chunk.js.LICENSE.txt",
+    "static/media/ampulheta.png": "/triviagameproject/static/media/ampulheta.ca41588a.png",
+    "static/media/check.png": "/triviagameproject/static/media/check.d8fbb0ea.png",
+    "static/media/interrogation.png": "/triviagameproject/static/media/interrogation.5a554197.png",
+    "static/media/wrong.png": "/triviagameproject/static/media/wrong.b523ea0d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.38430777.js",
+    "static/js/2.ed93f78b.chunk.js",
+    "static/css/main.e28f0003.chunk.css",
+    "static/js/main.acd583d7.chunk.js"
+  ]
+}
