@@ -10,7 +10,7 @@ import Ranking from './pages/Ranking';
 export default function App() {
   return (
     <Switch>
-      <Route exact path="/" render={ (props) => <Login { ...props } /> } />
+      <Route exact path="/triviagameproject" render={ (props) => <Login { ...props } /> } />
       <Route exact path="/trivia" render={ (props) => <Trivia { ...props } /> } />
       <Route exact path="/settings" render={ (props) => <Settings { ...props } /> } />
       <Route exact path="/feedback" render={ (props) => <FeedBack { ...props } /> } />
